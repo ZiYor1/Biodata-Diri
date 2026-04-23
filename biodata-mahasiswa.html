@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Biodata Mahasiswa</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; padding: 50px; background-color: #eef2f7; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); width: 380px; border-top: 5px solid #16a847; }
+        h2 { color: #2c3e50; text-align: center; margin-bottom: 20px; }
+        p { margin: 12px 0; color: #444; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
+        .label { font-weight: bold; color: #34495e; display: inline-block; width: 100px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Biodata Mahasiswa</h2>
+    <div id="biodata-container">
+        </div>
+</div>
+
+<script>
+    // 1. Data diri dalam bentuk Objek
+    const mahasiswa = {
+        nama: "Firman Yusuf Maulana",
+        nim: "15240087", // Ganti dengan NIM Anda
+        prodi: "Informatika", // Ganti dengan Prodi Anda
+        umur: 20,
+        hobi: ["coding", "gaming", "traveling"],
+        status: "Aktif"
+    };
+
+    // 2. Fungsi untuk merender data ke halaman
+    function tampilkanProfil() {
+        const wadah = document.getElementById('biodata-container');
+        
+        wadah.innerHTML = `
+            <p><span class="label">Nama:</span> ${mahasiswa.nama}</p>
+            <p><span class="label">NIM:</span> ${mahasiswa.nim}</p>
+            <p><span class="label">Prodi:</span> ${mahasiswa.prodi}</p>
+            <p><span class="label">Umur:</span> ${mahasiswa.umur} Tahun</p>
+            <p><span class="label">Hobi:</span> ${mahasiswa.hobi.join(", ")}</p>
+            <p><span class="label">Status:</span> ${mahasiswa.status}</p>
+        `;
+    }
+
+    // Jalankan fungsi
+    window.onload = tampilkanProfil;
+</script>
+
+</body>
+</html>
